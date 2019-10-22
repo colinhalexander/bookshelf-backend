@@ -79,7 +79,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: bookshelf_backend_production
-  username: bookshelf_backend
-  password: <%= ENV['BOOKSHELF_BACKEND_DATABASE_PASSWORD'] %>
+  <<: postgres://wkawkqgvjldsap:0136474bf550b92b4ae4c2c990b2a0c9cd2fe71c9327a35f641cb2a0940b5f7e@ec2-174-129-252-226.compute-1.amazonaws.com:5432/d51iafjj3hui88
+  database: d51iafjj3hui88
+  username: wkawkqgvjldsap
+  password: 0136474bf550b92b4ae4c2c990b2a0c9cd2fe71c9327a35f641cb2a0940b5f7e
