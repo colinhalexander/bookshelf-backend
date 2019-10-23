@@ -44,3 +44,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "rest-client", "~> 2.1"
 
 gem 'fast_jsonapi'
+gem "jwt", "~> 2.2"
+gem "bcrypt", "~> 3.1"
