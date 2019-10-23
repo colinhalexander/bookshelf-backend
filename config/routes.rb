@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   get '/nyt', to: 'api#nyt'
   post '/google', to: 'api#google'
+
+  resources :users, only: [:create]
 end
