@@ -11,7 +11,10 @@ class UsersController < ApplicationController
 
     if @user.valid?
       @user.save
-      render json: @user
+    Collection.create({ name: "Reading Now", user_id: @user.id })
+    Collection.create({ name: "To Read", user_id: @user.id })
+    Collection.create({ name: "Favorites", user_id: @user.id })
+      render json: @user, include: :collections
     else
       render json: { error: @user.errors.full_messages }
     end
@@ -20,7 +23,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 
-    render json: @user, except: [:password_digest, :created_at, :updated_at]
+    render json: @user, except: [:password_digest, :created_at, :updated_at], include: :collections
   end
 
   private
