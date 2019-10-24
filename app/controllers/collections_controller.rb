@@ -1,7 +1,7 @@
 class CollectionsController < ApplicationController
 
   def create
-    @collection = Collection.save({ name: params[:name], user_id: params[:user_id] })
+    @collection = Collection.new({ name: params[:name], user_id: params[:user_id] })
 
     if @collection.valid?
       @collection.save

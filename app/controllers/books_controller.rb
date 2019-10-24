@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
 
   def create
-    @book = Book.save({
+    @book = Book.new({
       title: params[:title],
       authors: params[:authors],
       description: params[:description],

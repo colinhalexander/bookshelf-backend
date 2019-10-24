@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     Collection.create({ name: "Reading Now", user_id: @user.id })
     Collection.create({ name: "To Read", user_id: @user.id })
     Collection.create({ name: "Favorites", user_id: @user.id })
-      render json: @user, include: :collections
+      render json: UserSerializer.new(@user)
     else
       render json: { error: @user.errors.full_messages }
     end
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 
-    render json: @user, except: [:password_digest, :created_at, :updated_at], include: :collections
+    render json: UserSerializer.new(@user)
   end
 
   private
