@@ -20,4 +20,17 @@ class BooksController < ApplicationController
       render json: { error: @book.errors.full_messages }
     end
   end
+
+  def update 
+    @book = Book.find(params[:id])
+    @book.update({ collection_id: params[:collection_id]})
+
+    render json: @book
+  end
+
+  def destroy
+    Book.destroy([params[:id]])
+
+    render json: { message: "delete successful" }
+  end
 end

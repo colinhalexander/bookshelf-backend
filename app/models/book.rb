@@ -1,13 +1,13 @@
 class Book < ApplicationRecord
   belongs_to :collection
 
-  validations :title, presence: true
-  validations :authors, presence: true
-  validations :publisher, presence: true
-  validations :description, presence: true
-  validations :image_url, presence: true
-  validations :buy_url, presence: true
-  validations :isbn10, presence: true
-  validations :isbn13, presence: true
-  validations :collection_id, presence: true
+  validates :title, presence: true
+  validates :authors, presence: true
+  validates :publisher, presence: true
+  validates :description, presence: true
+  validates :image_url, presence: true
+  validates :buy_url, presence: true
+  validates :isbn10, presence: true
+  validates :isbn13, presence: true
+  validates :collection_id, presence: true
 end

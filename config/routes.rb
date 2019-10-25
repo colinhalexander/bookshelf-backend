@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   post '/login', to: 'login#login'
 
   resources :users, only: [:create, :show]
-  resource :collections, only: [:create]
-  resource :books, only: [:create]
+  resources :collections, only: [:create]
+  resources :books, only: [:create, :update, :destroy]
 end
